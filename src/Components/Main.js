@@ -8,15 +8,15 @@ function Main() {
   const [articles, Setarticles] = useState([])
   const [search, setSerach] = useState("iphone")
 
-  // useEffect(() => {
-  //   let URL = "https://newsapi.org/v2/everything?q=iphone&from=2022-05-02&to=2022-05-02&sortBy=popularity&apiKey=61474326a32f4dfe818c64b7cebc7a6e"
-  //   fetch(URL)
-  //     .then((res) => res.json())
-  //     .then((news) => {
-  //       console.log(news.articles)
-  //       Setarticles(news.articles);
-  //     })
-  // }, [])
+  useEffect(() => {
+    let URL = "https://newsapi.org/v2/everything?q=iphone&from=2022-05-02&to=2022-05-02&sortBy=popularity&apiKey=61474326a32f4dfe818c64b7cebc7a6e"
+    fetch(URL)
+      .then((res) => res.json())
+      .then((news) => {
+        console.log(news.articles)
+        Setarticles(news.articles);
+      })
+  }, [])
 
   function readValue(value){
       setSerach(value)
